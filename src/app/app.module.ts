@@ -5,16 +5,21 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { DadosItem } from '../pages/dados-item/dados-item';
+import { ItemDescricao } from '../pages/item-descricao/item-descricao';
+import { ListPage } from '../pages/list/list';
+import { GastosDiario } from '../pages/gastos-diario/gastos-diario';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Dados } from '../providers/dados'
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    ItemDescricao,
+    GastosDiario,
     ListPage,
     DadosItem
   ],
@@ -27,12 +32,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
+    ItemDescricao,
+    GastosDiario,
     ListPage,
     DadosItem
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Dados,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

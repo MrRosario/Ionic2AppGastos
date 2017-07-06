@@ -1,30 +1,30 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Gasto</ion-title>
+    <ion-title>Gastos</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-fab right bottom>
-    <button ion-fab color="primary" (click)="adicionarItem()">
+    <button ion-fab color="secondary" (click)="adicionarItem()">
       <ion-icon name="md-add"></ion-icon>
     </button>
   </ion-fab>
 
-  <ion-list>
+  <ion-list >
 
-    <ion-item-sliding #item *ngIf="exibirRemover">
-      <ion-item>
-        <h2>Dados</h2>
-        <p>I've had a happy up day...</p>
-        <p item-end>08/08/1994</p>
+    <ion-item-sliding *ngFor="let item of items; let i = index;">
+      <ion-item class="itemAtivo" (click)="verItem(item)">
+        <h2>{{item.ondeGastou}}</h2>
+        <p>{{item.quantoGastou}} Reais</p>
+        <p class="tempo" item-end>{{ item.tempoAtual | date:'dd/MM/yyyy HH:mm' }}</p>
       </ion-item>
 
       <ion-item-options side="right">
-        <button ion-button color="danger" (click)="apagarItem()">Apagar</button>
+        <button ion-button color="danger" (click)="apagarItem(i)">Apagar</button>
       </ion-item-options>
     </ion-item-sliding>
 
