@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
+import { MomentModule } from 'angular2-moment';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -9,10 +10,11 @@ import { DadosItem } from '../pages/dados-item/dados-item';
 import { ItemDescricao } from '../pages/item-descricao/item-descricao';
 import { ListPage } from '../pages/list/list';
 import { GastosDiario } from '../pages/gastos-diario/gastos-diario';
+import { EditarItem } from '../pages/editar-item/editar-item';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Dados } from '../providers/dados'
+import { Dados } from '../providers/dados';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { Dados } from '../providers/dados'
     ItemDescricao,
     GastosDiario,
     ListPage,
-    DadosItem
+    DadosItem,
+    EditarItem
   ],
   imports: [
     BrowserModule,
+    MomentModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
@@ -35,7 +39,8 @@ import { Dados } from '../providers/dados'
     ItemDescricao,
     GastosDiario,
     ListPage,
-    DadosItem
+    DadosItem,
+    EditarItem
   ],
   providers: [
     StatusBar,

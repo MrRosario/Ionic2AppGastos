@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding>
+
   <ion-fab right bottom>
     <button ion-fab color="secondary" (click)="adicionarItem()">
       <ion-icon name="md-add"></ion-icon>
@@ -17,15 +18,18 @@
   <ion-list >
 
     <ion-item-sliding *ngFor="let item of items; let i = index;">
+
       <ion-item class="itemAtivo" (click)="verItem(item)">
         <h2>{{item.ondeGastou}}</h2>
         <p>{{item.quantoGastou}} Reais</p>
-        <p class="tempo" item-end>{{ item.tempoAtual | date:'dd/MM/yyyy HH:mm' }}</p>
+        <p class="tempo" item-end>{{ item.tempoAtual | date:'dd/MM/yy HH:mm' }}</p>
       </ion-item>
 
       <ion-item-options side="right">
         <button ion-button color="danger" (click)="apagarItem(i)">Apagar</button>
+        <button ion-button color="secondary" (click)="editarItem(item,i)">Editar</button>
       </ion-item-options>
+
     </ion-item-sliding>
 
   </ion-list>

@@ -11,5 +11,16 @@
 </ion-header>
 
 <ion-content padding>
-  <p>A pagina funciona muito bem </p>
+  <ion-card>
+    <ion-card-header>
+      Total dos gastos diario
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item ngFor="let item of items">
+        50 Reais
+        <p item-end> 07/07/2017</p>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>

@@ -1,6 +1,5 @@
 {
   "name": "Gasto",
   "app_id": "ef0b77f6",
-  "v2": true,
-  "typescript": true
+  "type": "ionic-angular"
 }

@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { DadosItem } from '../dados-item/dados-item';
 import { ItemDescricao } from '../item-descricao/item-descricao';
+import { EditarItem } from './../editar-item/editar-item';
 
 import { Dados } from '../../providers/dados';
-
 
 @Component({
   selector: 'page-home',
@@ -15,11 +15,12 @@ export class HomePage {
 
   public items: any = [];
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public servicoDados: Dados) {
+  constructor(public navCtrl: NavController, 
+              public modalCtrl: ModalController,public servicoDados: Dados) {
 
     this.servicoDados.obterDados().then((dados) => {
       if(dados){
-            this.items = JSON.parse(dados); //CONVERTE OS DADOS DO SERVIDOR EM OBJETO
+          this.items = JSON.parse(dados); //CONVERTE OS DADOS DO SERVIDOR EM OBJETO
         }
     });
   }
@@ -46,9 +47,16 @@ export class HomePage {
     });
   }
 
-  apagarItem(item){
-    this.items.splice(item,1);
+  apagarItem(index){
+    this.items.splice(index,1);
     this.servicoDados.apagar(this.items);
-    console.log('Item '+item+' apagado com sucesso...');
+    console.log('Item '+ index +' apagado com sucesso');
+  }
+
+  editarItem(item, i){
+    this.navCtrl.push(EditarItem, {
+    item: item,
+    index: i //REPRESENTANDO O INDICE DO ITEM
+    });
   }
 }

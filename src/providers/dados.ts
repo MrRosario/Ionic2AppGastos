@@ -21,5 +21,5 @@ export class Dados {
     //return this.storage.remove('dados');
     let dadoModificado = JSON.stringify(novaColecao);
     this.storage.set('dados', dadoModificado);
-    }
+    } 
   }
