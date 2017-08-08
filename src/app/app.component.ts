@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { GastosDiario } from '../pages/gastos-diario/gastos-diario';
+import { GastosMensais } from '../pages/gastos-mensais/gastos-mensais';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,10 +23,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.paginas = [
-      { titulo: 'Gastos diario', component: HomePage, icone: 'ios-time-outline'},
-      { titulo: 'Gasto do dia', component: GastosDiario, icone: 'ios-time-outline'},
-      //{ titulo: 'Gastos semanais', component: ListPage, icone: 'ios-paper-outline'},
-      { titulo: 'Gastos mensais', component: ListPage, icone: 'ios-calendar-outline'},
+      { titulo: 'Gastos', component: HomePage, icone: 'ios-time-outline'},
+      { titulo: 'Total do dia', component: GastosDiario, icone: 'ios-time-outline'},
+      { titulo: 'Gastos mensais', component: GastosMensais, icone: 'ios-calendar-outline'},
       { titulo: 'Ajuda', component: ListPage, icone: 'ios-help-circle-outline'},
       { titulo: 'Sobre', component: ListPage, icone: 'ios-information-circle-outline'}
     ];

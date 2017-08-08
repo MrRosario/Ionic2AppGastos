@@ -11,6 +11,7 @@ import { ItemDescricao } from '../pages/item-descricao/item-descricao';
 import { ListPage } from '../pages/list/list';
 import { GastosDiario } from '../pages/gastos-diario/gastos-diario';
 import { EditarItem } from '../pages/editar-item/editar-item';
+import { GastosMensais } from '../pages/gastos-mensais/gastos-mensais';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,12 +25,16 @@ import { Dados } from '../providers/dados';
     GastosDiario,
     ListPage,
     DadosItem,
-    EditarItem
+    EditarItem,
+    GastosMensais
   ],
   imports: [
     BrowserModule,
     MomentModule,
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot({
+      name: 'dados',
+     driverOrder: ['indexeddb', 'sqlite', 'websql']
+    }),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -40,7 +45,8 @@ import { Dados } from '../providers/dados';
     GastosDiario,
     ListPage,
     DadosItem,
-    EditarItem
+    EditarItem,
+    GastosMensais
   ],
   providers: [
     StatusBar,

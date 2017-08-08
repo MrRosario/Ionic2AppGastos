@@ -6,7 +6,7 @@ export class Dados {
 
   constructor(public storage: Storage) {}
 
-  obterDados(){
+   obterDados(){
     return this.storage.get('dados');
   }
 

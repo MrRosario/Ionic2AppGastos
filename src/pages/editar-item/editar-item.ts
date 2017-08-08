@@ -8,6 +8,7 @@ import { Dados } from '../../providers/dados';
 })
 
 export class EditarItem{
+  
   quantoGastou: any;
   ondeGastou: any;
   descricaoGasto: any;
@@ -23,6 +24,7 @@ export class EditarItem{
           this.items = JSON.parse(dados); //CONVERTE OS DADOS DO SERVIDOR EM OBJETO
         }
     });
+
   }
 
   ionViewDidLoad() {

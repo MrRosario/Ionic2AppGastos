@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
+
 import { DadosItem } from '../dados-item/dados-item';
 import { ItemDescricao } from '../item-descricao/item-descricao';
 import { EditarItem } from './../editar-item/editar-item';
@@ -36,8 +37,11 @@ export class HomePage {
     modal.present();
   }
 
+  /* BUG AO SALVAR O SEXTO ITEM O QUINTO PASSA A SER O ULTIMO ITEM DA LISTA
+  ESTUDAR O FUNCIONAMENTO DO REVERSE PARA ACABAR COM ISSO DE UMA VEZ POR TODAS */
   salvarDados(listaDados){
    this.items.push(listaDados);
+   this.items.reverse(); //DEPOIS DE ADICIONADOS NA ARRAY A ORDEM EH REVERTIDA
    this.servicoDados.salvar(this.items);
  }
 
